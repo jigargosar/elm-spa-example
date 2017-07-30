@@ -1,0 +1,20 @@
+{
+  "name": "elm-spa-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jigargosar/elm-spa-example.git",
+  "author": "Jigar Gosar <jigar.gosar@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "6.25.0",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-env": "1.6.0",
+    "elm": "0.18.0",
+    "elm-live": "2.7.5",
+    "jsonfile": "3.0.1",
+    "line-driver": "1.1.9",
+    "ramda": "0.24.1",
+    "runjs": "3.4.1",
+    "tempy": "0.1.0"
+  }
+}

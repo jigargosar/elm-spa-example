@@ -3,4 +3,5 @@ elm-stuff/
 # elm-repl generated files
 repl-temp-*
 
-elm.js
+.idea/workspace.xml
+node_modules/
