@@ -49,5 +49,31 @@ export function generateDependenciesStatsFile() {
   // console.log("dep", modules["Document"])
 }
 
+const addCompileTime = _.curry((mainModuleName, module)=>{
+  run("touch "+ module.fileName)
+  const startTime = Date.now()
+  run(`elm-make ${mainModuleName} --output /dev/null`)
+  const elapsed = Date.now() - startTime
+  let onTouchMainFileCompileTime = elapsed / 1000
+  console.log(onTouchMainFileCompileTime)
+  return _.merge(module, {onTouchMainFileCompileTime})
+})
+
+export function generateElmMakeStatsFile() {
+  const modules = computeDependencies()
+  
+  const modulesWithCompileTime = _.map(addCompileTime("src/Main.elm"))(modules)
+  
+  run("mkdir -p stats")
+  let statsFileName = "stats/elm-make-compile-time.json"
+  console.log("writing stats:",statsFileName)
+  fs.writeFileSync(
+      statsFileName,
+      JSON.stringify(modulesWithCompileTime, null, 2),
+      "UTF-8",
+  )
+  // console.log("dep", modules["Document"])
+}
+
 
 

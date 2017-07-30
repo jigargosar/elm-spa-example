@@ -227,6 +227,8 @@ export const parseWPD = elm.parseWPD
 export const rui = elm.rui
 export const dep = ElmDep.logTransitiveImportsOf
 export const genDep = ElmDep.generateDependenciesStatsFile
+export const genCompile = ElmDep.generateElmMakeStatsFile
+
 
 
 function runFish(command) {
